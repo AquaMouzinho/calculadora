@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/estilo.css">
+  <link rel="stylesheet" href="./styles/nice-select.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Calculadora</h1>
+      <h2>Por Marino Mouzinho</h2>
+    </div>
+    <select title="opcoes" name="modo-calculadora" id="selModoCalculadora" class="nice-select">
+        <optgroup label="Calculadoras">
+        <option value="basica">Calculadora básica</option>
+        <option value="avancada">Calculadora Avançada</option>
+      </optgroup>
+      <optgroup label="Conversores">
+        <option value="conv-sis-num">Conversor de Sistemas Numéricos</option>
+        <option value="conv-unidades-med">Conversor Unidades de Medida</option>
+      </optgroup>
+    </select>
+  </header>
+  <main>
+    <section class="sec-calculadora">
+      <div class="calculadora" id="divTeclado">
+        <p id="linhaEquacao"></p>
+        <p id="entradaCalculadora">0</p>
+      </div>
+    </section>
+    <section class="sec-historico">
+      <div class="historico" id="divHistorico">
+        <p>sem historico</p>
+      </div>
+      <button id="btnLimpHist">Limpar</button>
+    </section>
+  </main>
+
+  <script src="./scripts/jquery.js"></script> 
+  <script src="./scripts/jquery.nice-select.js"></script>
+
+  <script src="./scripts/script.js"></script>
+</body>
+</html>
