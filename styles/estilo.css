@@ -3,7 +3,7 @@
 body {
   height: 100vh;
   font-family: 'Poppins', monospace;
-  background-color: whitesmoke;
+  background-color: rgb(247, 247, 247);
 }
 
 header {
@@ -139,6 +139,7 @@ main {
 
 .item-historico .item-resultado {
   color: rgba(000, 000, 000, .85);
+  word-break: break-all;
 }
 
 .item-historico .item-resultado::before {
@@ -152,6 +153,7 @@ main {
   border: none;
   border-radius: 5px;
   padding: 0.5rem;
+  margin-top: 0.5rem;
   font-family: 'Poppins', monospace;
   font-size: 10px;
   color: white;
@@ -162,4 +164,10 @@ main {
   transform: translateY(-5%);
   background-color: rgba(000, 000, 000, .95);
   cursor: pointer;
+}
+
+.sec-avancada,
+.sec-conv-sis-num,
+.sec-conv-unidades-med {
+  display: none;
 }

@@ -100,31 +100,51 @@ function clicar(element) {
       if (mostrandoResultado) {
         mostrandoResultado = false;
       }
-      displayer.innerHTML = '0';
-      equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+
+      if (!meioOperacao) {
+        displayer.innerHTML = '0';
+        equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+        meioOperacao = true;
+      }
+
       break;
     case '-':
       if (mostrandoResultado) {
         mostrandoResultado = false;
       }
-      displayer.innerHTML = '0';
-      equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+      if (!meioOperacao) {
+        displayer.innerHTML = '0';
+        equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+        meioOperacao = true;
+      }
       break;
     case 'x':
       if (mostrandoResultado) {
         mostrandoResultado = false;
       }
-      displayer.innerHTML = '0';
-      equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+
+      if (!meioOperacao) {
+        displayer.innerHTML = '0';
+        equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+        meioOperacao = true;
+      }
       break;
     case '/':
       if (mostrandoResultado) {
         mostrandoResultado = false;
       }
-      displayer.innerHTML = '0';
-      equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+
+      if (!meioOperacao) {
+        displayer.innerHTML = '0';
+        equacao.innerHTML += ' ' + element.target.innerHTML + ' ';
+        meioOperacao = true;
+      }
       break;
     default:
+      if (meioOperacao) {
+        meioOperacao = false;
+      }
+
       if (equacao.innerHTML === '') {
         equacao.innerHTML = element.target.innerHTML;
       } else {
@@ -198,16 +218,31 @@ function disponibilizarTeclado() {
   }
 }
 
+function mudarView() {
+  var optSelecionada = sel.options[sel.selectedIndex].value;
+  console.log(optSelecionada);
+  if (!(telaAtual == optSelecionada)) {
+    document.getElementsByClassName(`sec-${telaAtual}`)[0].style.display = 'none';
+    document.getElementsByClassName(`sec-${optSelecionada}`)[0].style.display = 'block';
+    telaAtual = optSelecionada;
+  }
+}
+
 var listaDeEquacoes = [];
 var somando = false;
 var subtraindo = false;
 var multiplicando = false;
 var dividindo = false;
 var mostrandoResultado = false;
+var meioOperacao = false;
 var resultado = 0;
+var telaAtual = 'basica';
 
 var btnLimpar = document.getElementById('btnLimpHist');
 btnLimpar.onclick = limparHistorico;
+
+var sel = document.getElementById('selModoCalculadora');
+sel.onchange = mudarView;
 
 $(document).ready(function () {
   $('select').niceSelect();
