@@ -19,7 +19,6 @@
     <select title="opcoes" name="modo-calculadora" id="selModoCalculadora" class="nice-select">
         <optgroup label="Calculadoras">
           <option value="basica">Calculadora básica</option>
-          <option value="avancada">Calculadora Avançada</option>
         </optgroup>
         <optgroup label="Conversores">
           <option value="conv-sis-num">Conversor de Sistemas Numéricos</option>
@@ -34,11 +33,29 @@
         <p id="entradaCalculadora">0</p>
       </div>
     </section>
-    <section class="sec-avancada">
-      <h3>AVANÇADA</h3>
-    </section>
     <section class="sec-conv-sis-num">
-      <h3>SISTEMAS NÚMERICOS</h3>
+      <div class="grid-conv-sis">
+          <input id="inptNumConv" type="number" placeholder="Insira o valor a ser convertido...">
+          <select title="sistemas" name="opcoesConvNum" id="selConvNum">
+            <option value="binario">Binário</option>
+            <option value="octal">Octal</option>
+            <option value="decimal">Decimal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+          </select>
+
+          <label for="sistema-convertido">para o sistema: </label>
+          <select title="sistemas-conver" name="sistema-convertido" id="selConverNum">
+            <option value="binario">Binário</option>
+            <option value="octal">Octal</option>
+            <option value="decimal">Decimal</option>
+            <option value="hexadecimal">Hexadecimal</option>
+          </select>
+          <button id="btnConvSis" type="button">Converter</button>
+
+          <div class="resultado">
+            <h3 id="textoResultadoConvSis"></h3>
+          </div>
+      </div>   
     </section>
     <section class="sec-conv-unidades-med">
       <h3>UNIDADAES DE MEDIDA</h3>
@@ -55,5 +72,6 @@
   <script src="./scripts/jquery.nice-select.js"></script>
 
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/conversaonum.js"></script>
 </body>
 </html>
